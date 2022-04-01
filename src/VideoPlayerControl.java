@@ -1,11 +1,9 @@
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
-public class VideoControl {
+public class VideoPlayerControl {
 
     @FXML
     private MediaPlayer mediaPlayer;
@@ -16,22 +14,21 @@ public class VideoControl {
     }
 
     @FXML
-    protected void runVideo() {
-        mediaPlayer.play();
+    protected void togglePlayPause() {
+        if (mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING)) {
+            mediaPlayer.pause();
+        } else {
+            mediaPlayer.play();
+        }
     }
 
     @FXML
-    protected void pauseVideo() {
-        mediaPlayer.pause();
-    }
-
-    @FXML
-    protected void goToStart() {
+    protected void previous() {
         mediaPlayer.seek(Duration.ZERO);
     }
 
     @FXML
-    protected void goToEnd() {
+    protected void next() {
         mediaPlayer.seek(mediaPlayer.getMedia().getDuration());
     }
 
