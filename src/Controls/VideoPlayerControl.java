@@ -1,3 +1,5 @@
+package Controls;
+
 import javafx.fxml.FXML;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -44,4 +46,8 @@ public class VideoPlayerControl {
     protected void navigateVideo(int newPosition) {
 
     }
+
+    @FXML
+    protected void openMenu() {}
+
 }
