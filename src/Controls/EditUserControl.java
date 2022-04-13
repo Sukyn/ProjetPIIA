@@ -1,6 +1,8 @@
 package Controls;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -11,9 +13,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import MainClasses.VideoPlayer;
+
 public class EditUserControl {
+
     @FXML
-    protected void openMenu(){}
+    protected void openMenu() throws IOException {
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MenuAccueil.fxml")),500,400);
+        VideoPlayer.primaryStage.setScene(scene);
+    }
 
     @FXML
     protected void addUser() throws IOException {

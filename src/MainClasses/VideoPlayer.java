@@ -1,3 +1,4 @@
+package MainClasses;
 /*import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,37 +23,34 @@ public class View extends Application {
 
 }
 */
-import java.io.File;
-import javafx.util.Duration;
 
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-import javafx.scene.Group;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 public class VideoPlayer extends Application {
     private MediaPlayer mediaPlayer;
+    public static Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        String videoPath = "C:\\IIA\\video\\test_video.mp4";
-        String videoFileURIStr = new
-                File(videoPath).toURI().toString();
+        VideoPlayer.primaryStage = primaryStage;
 //Instantiating Media class
-        Media activeVideo = new Media(videoFileURIStr);
 //Media media = new Media("");
 //Instantiating MediaPlayer class
-        this.mediaPlayer = new MediaPlayer(activeVideo);
 //Instantiating MediaView class
-        MediaView mediaView = new MediaView(mediaPlayer);
 //by setting this property to true, the Video will be played
-        mediaPlayer.setAutoPlay(true);
 //Setting group and scene
-        Group root = new Group();
-        root.getChildren().add(mediaView);
-        Scene scene = new Scene(root,500,400);
+        Parent p = null;
+        try {
+            p = FXMLLoader.load(getClass().getResource("/home/julien/Documents/S6/piia/ProjetPIIA/src/interfaces/MenuAccueil.fxml"));
+        } catch (IOException e) {}
+        Scene scene = new Scene(p,500,400);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Example video player");
         primaryStage.show();
