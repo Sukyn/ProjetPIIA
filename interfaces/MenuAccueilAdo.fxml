@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:controller="Controls.MenuControl" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuControl">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -88,6 +88,7 @@
             <Button fx:id="buttonAccount" layoutX="519.0" layoutY="14.0" mnemonicParsing="false" onAction="#openAccount" text="Compte" />
             <TextField fx:id="searchField" layoutX="14.0" layoutY="14.0" />
             <ListView fx:id="videoList" layoutX="14.0" layoutY="56.0" prefHeight="303.0" prefWidth="439.0" />
+            <Button fx:id="buttonReadVideo" layoutX="481.0" layoutY="162.0" mnemonicParsing="false" onAction="#openVideo" prefHeight="39.0" prefWidth="146.0" text="Lire la video" />
       </children>
     </AnchorPane>
   </children>

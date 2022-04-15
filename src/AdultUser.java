@@ -1,5 +1,3 @@
-package MainClasses;
-
 public class AdultUser extends AdoUser {
 
     public AdultUser(String username, String password) {

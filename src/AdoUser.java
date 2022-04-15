@@ -1,5 +1,3 @@
-package MainClasses;
-
 public class AdoUser extends UserAccount {
     private String username;
     private String password;
